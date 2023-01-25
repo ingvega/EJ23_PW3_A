@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        label,input{
+            display: block;
+        }
+        form{
+            background: #ddd;
+            width: 40%;
+            margin: 0 auto;
+            padding: 3em;
+        }
+        h1{
+            text-align: center;
+        }
+        input{
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 0.5rem;
+        }
+        button{
+            padding: .5em;
+            background: green;
+            color:white;
+            margin: 0.5em auto;
+            display: block;
+        }
+        div{
+            border: 1px solid #000;
+            padding: .5rem;
+        }
+        *{
+            font-size: 16px;
+        }
+        div{
+            font-size: 2rem;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!--contenedor-->
+    <div>
+        <!--Login-->
+        <form action="">
+            <h1>Iniciar sesión</h1>
+            <label for="txtUsuario">Usuario</label>
+            <input name="txtUsuario" type="text" id="txtUsuario" required />
+            <label for="txtPassword">Contraseña</label>
+            <input name="txtPassword" type="password" id="txtPassword" required/>
+            <button type="button" onclick="login()">Ingresar</button>
+        </form>
+    </div>
+    <div>
+        contenedor 2
+        <div>
+            contenedor 2.1
+        </div>
+        <div>
+            contenedor 2.2
+            <div>Contenedor 2.2.1</div>
+        </div>
+
+    </div>
+    <script>
+        function login(){
+            let usuario=document.getElementById("txtUsuario").value;
+            let password=document.getElementById("txtPassword").value;
+            if(usuario=="admin" && password=="123"){
+                alert('Datos correctos');
+            }else{
+                alert('Datos no válidos');
+            }
+        }
+    </script>
+</body>
+</html>
