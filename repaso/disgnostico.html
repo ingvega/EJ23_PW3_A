@@ -60,7 +60,9 @@
             <input name="txtUsuario" type="text" id="txtUsuario" required />
             <label for="txtPassword">Contraseña</label>
             <input name="txtPassword" type="password" id="txtPassword" required/>
-            <button type="button" onclick="login()">Ingresar</button>
+            <button type="button" id="btnVer">Ver contraseña</button>
+            <button type="button" id="btnIngresar">Ingresar</button>
+            <!--<button type="button" onclick="login()">Ingresar</button>-->
         </form>
     </div>
     <div>
@@ -75,7 +77,45 @@
 
     </div>
     <script>
-        function login(){
+        //Solo espera a que se cree el DOM (el árbol
+        //que representa mi documento html)
+        //window.addEventListener("DOMContentLoaded",function(){
+        
+        //Espera a que se cargen todos los recursos
+        //(imagenes, scripts, videos, estilos...)
+        window.addEventListener("load",function(){
+            var btn=document.getElementById("btnIngresar");
+            //btn.onclick=login;
+            btn.addEventListener("click",function(e){
+                let usuario=document.getElementById("txtUsuario").value;
+                let password=document.getElementById("txtPassword").value;
+                debugger;
+                if(usuario=="admin" && password=="123"){
+                    alert('Datos correctos');
+                }else{
+                    alert('Datos no válidos');
+                }
+            });
+
+            document.getElementById("btnVer").
+            addEventListener("click",function(e){
+                var txtPass=document.getElementById("txtPassword");
+                //El password se esta viendo y debo ocultarlo
+                if(txtPass.type=='text'){
+                    txtPass.type='password';
+                    e.target.innerHTML='Ver contraseña';
+                //El password se esta oculto y debo mostrarlo
+                }else{
+                    txtPass.type='text';
+                    e.target.innerHTML='Ocultar contraseña';
+                }
+            })
+        });
+        
+
+
+
+        function login(e){
             let usuario=document.getElementById("txtUsuario").value;
             let password=document.getElementById("txtPassword").value;
             if(usuario=="admin" && password=="123"){
