@@ -5,13 +5,29 @@ var fila='';
 var cont=1;
 //Armar todas las filas
 for (let index = 0; index < filas; index++) {
-    fila+='<div class="fila">';
+    //Crear el div de la fila (un div vacío)
+    fila=document.createElement("div");
+    fila.className='fila';
+    
+    //fila+='<div class="fila">';
     //arma cada fila
+    let espacio;
     for (let e = 1; e <= 5; e++) {
-        fila+=`<div class="espacio">E${cont}</div>`;
+        espacio=document.createElement("div");
+        espacio.className='espacio';
+        espacio.innerText='E'+cont;
+        espacio.addEventListener("click",clickEspacio);
         cont++;
-     //fila+=`<div class="espacio">E` + cont + `</div>`;    
+        fila.append(espacio);
     }
-    fila+="</div>";
+    document.getElementById("laboratorio").append(fila);
 } 
-document.getElementById("laboratorio").innerHTML=fila;
+
+
+function clickEspacio(e){
+    if(e.target.style.backgroundColor=='red'){
+        e.target.style.backgroundColor='white';
+    }else{
+        e.target.style.backgroundColor='red';
+    }
+}
