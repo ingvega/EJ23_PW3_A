@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.espacio{
+    width: 5vw;/*viewport width (unidades 0 a 100 del ancho de 
+    la pantalla o navegador) */
+    height: 5vw;
+    border: 1px solid #000;
+    display: inline-block;
+}
+
+.fila{
+    text-align: center;
+}
