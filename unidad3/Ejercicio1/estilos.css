@@ -1,0 +1,22 @@
+*{
+    margin:0;
+    padding:0;
+    /*Evitar que los tamaños se vean afectados por margin y pading*/
+    box-sizing: border-box;
+}
+
+.notificacion{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: .5rem;
+    width: 90%;
+    display: inline-block;
+}
+
+@media (min-width:481px ) and (max-width:768px ) {
+    .notificacion{
+        width: 45%;
+    }
+}
+
+
