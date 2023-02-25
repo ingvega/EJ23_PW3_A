@@ -1,0 +1,67 @@
+*{
+    margin:0;
+    padding:0;
+    /*Evitar que los tamaños se vean afectados por margin y pading*/
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+aside{
+    width: 100%;
+}
+main{
+    width: 100%;
+}
+
+.notificacion{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: .5rem;
+    width: 90%;
+    display: inline-block;
+}
+/*Pantallas medianas*/
+@media (min-width:481px )  {
+    .notificacion{
+        width: 45%;
+    }
+    .container{
+        flex-direction: row;
+    }
+    main{
+        width: 70%;
+    }
+    aside{
+        width: 30%;
+    }
+}
+
+/*Pantallas grandes*/
+@media (min-width:769px ) {
+    .notificacion{
+        width: 32%;
+    }
+    .container{
+        flex-direction: row;
+    }
+    main{
+        width: 70%;
+    }
+    aside{
+        width: 30%;
+    }
+}
+
+
