@@ -8,3 +8,19 @@
     height: 100px;
 }
 */
+
+:root{
+    --fondo-principal: rgb(118,39,187);
+    --fondo-principal-resaltado: rgb(98, 16, 169);
+}
+
+.btn-morado{
+    background: var(--fondo-principal);
+    color:white;
+}
+
+.btn-morado:hover{
+    color:white;
+    background-color: var(--fondo-principal-resaltado);
+    border-color: var(--fondo-principal);
+}
