@@ -3,11 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-/*
-.navbar .container-fluid{
-    height: 100px;
-}
-*/
+
+
 
 :root{
     --fondo-principal: rgb(118,39,187);
@@ -23,4 +20,25 @@
     color:white;
     background-color: var(--fondo-principal-resaltado);
     border-color: var(--fondo-principal);
+}
+
+
+/*Mobile First
+.navbar .container-fluid{
+    height: 100px;
+}
+
+Pantallas grandes
+@media (min-width: 992px) {
+    .navbar .container-fluid{
+        height: auto;
+    }
+}
+*/
+
+/*Desktop First*/
+@media (max-width: 991px) {
+    .navbar .container-fluid{
+        height: 100px;
+    }
 }
