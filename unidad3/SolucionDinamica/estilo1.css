@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grupo{
+    display: flex;
+    flex-flow: column wrap;
+    padding: 1rem;
+}
+
+.contenedor{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .contenedor{
+        width: 80%;
+        flex-flow: row wrap;
+    }
+    .grupo{
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .contenedor{
+        width: 90%;
+        flex-flow: row wrap;
+    }
+    .grupo{
+        width: 33%;
+    }
+}
