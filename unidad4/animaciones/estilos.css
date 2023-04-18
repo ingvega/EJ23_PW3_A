@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background: #000;
+    padding: .5rem;
+}
+
+div{
+    text-align: center;
+    padding: .5rem;
+    background: #fff;
+    color:brown;
+    width: 10%;
+    animation-name: desplazar;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function:  cubic-bezier(0.55, 0.06, 0.68, 0.19);
+}
+
+@keyframes desplazar {
+    from{
+        margin-left: 0;
+    }
+    to{
+        margin-left: 200px;
+    }    
+}
