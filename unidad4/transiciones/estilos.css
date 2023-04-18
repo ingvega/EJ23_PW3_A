@@ -1,0 +1,33 @@
+button{
+    padding: .7rem;
+    margin-left: .5rem;
+    border-radius: 5px;
+    background: rgb(2, 57, 99);
+    color: white;
+}
+
+button:first-child{
+    margin-left: 0;
+}
+
+div{
+    /*width: 50%;*/
+    width: 50%;
+    background-color: rgb(14, 119, 98);
+    color: #fff;
+    padding: 2rem;
+    border: 2px solid rgb(3, 77, 74);
+    margin-top: 2rem;
+    transition-property: background-color,width,height,transform;
+    transition-duration: 0.5s;
+}
+
+#divTransiciones:hover{
+    background-color: aquamarine;
+    /*No recomendable para uso con hover por la posible 
+    perdida del cursor*/
+    width: 30%; 
+    /*height: 170px;*/
+    transform: scaleY(2);
+}
+
