@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.rostro{
+    width: 326px;
+    margin: 0 auto;
+    position: relative;
+    background: #dbbcc5;
+    height: 356px;
+    padding: 3rem 2rem;
+    border-radius: 45%;
+    animation-name: inicioRebote;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes inicioRebote {
+    from{
+        transform: translateY(-180px) scale(.1);
+    }
+    20%{
+        transform: scale(.30, .1);
+    }
+    40%{
+        transform: translateY(-140px) scale(.3);
+    }
+    60%{
+        transform: scale(.5, .3);
+    }
+    to{
+        transform:  scale(.5, .3);
+    }
+    
+}
+
+.ojo{
+    width: 111px;
+    height: 150px;
+    border: 3px solid #c3a2ab;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background: #fff;
+    transform: rotate(-10deg);
+}
+
+.ojo-der{
+    margin-left: 150px;
+    transform: rotate(10deg);
+}
+
+.parpado{
+    background: #c3a2ab;
+    border: 3px solid #b2969e;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin-top: -180px;
+    margin-left: -59px;
+    position: absolute;
+}
+
+.iris{
+    width: 55px;
+    height: 75px;
+    background: rgb(85, 45, 6);
+    border-radius: 50%;   
+    margin-top: 60px; 
+    margin-left: 35px;
+    position: absolute;
+}
+
+.brillo{
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;   
+    margin-top: 7px; 
+    margin-left: 31px;
+    position: absolute;
+}
+
+.pupila{
+    width: 28px;
+    height: 38px;
+    background: #000;
+    border-radius: 50%;   
+    margin-top: 19px;
+    margin-left: 14px;
+    position: absolute;
+
+}
+
+.boca{
+    position: absolute;
+    border: 4px solid #8e777d;
+    width: 169px;
+    margin-top: 208px;
+    margin-left: 47px;
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    background-color: rgb(113, 36, 36);
+    overflow: hidden;
+}
+
+.lengua{
+    width: 55px;
+    height: 75px;
+    background: #000;
+    border: 2px solid rgb(113, 36, 36);
+    border-radius: 50%;
+    margin-top: 35px;
+    margin-left: 46px;
+    position: absolute;
+    z-index: 1;
+}
+
+.lengua-der{
+    margin-left: 71px;
+    z-index: 0;
+}
