@@ -16,7 +16,7 @@
     padding: 1.5rem;
     font-size: 6rem;
     background: rgb(170, 191, 251);
-    transform: rotateX(90deg);
+    transform: rotateX(80deg);
 }
 
 @keyframes rotar {
