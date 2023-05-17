@@ -23,16 +23,36 @@ namespace APIWebNWind.Controllers
             return contexto.Products.OrderBy(p => p.ProductName);
 
         }
+        [HttpGet]
+        [Route("GetNameAndPrice")]
+        public IEnumerable<object> GetNameAndPrice()
+        {
+            IEnumerable<object> lista =
+                from producto in contexto.Products
+                select new
+                {
+                    Name = producto.ProductName,
+                    Price = producto.UnitPrice
+                };
+
+            return lista;
+        }
 
         [HttpGet]
-        [Route("getAll")]
-        public async Task<IActionResult> getAll()
+        [Route("GetNameAndPrice2")]
+        public IEnumerable<Product> GetNameAndPrice2()
         {
-            var result = await contexto.Products.OrderBy(p => p.ProductName).ToListAsync();
 
-            
-            return Ok(result);
-
+            IEnumerable<Product> listaP =
+                from producto in contexto.Products
+                select new Product()
+                {
+                    ProductName = producto.ProductName,
+                    UnitPrice = producto.UnitPrice
+                };
+            return listaP;
         }
+
+
     }
 }
