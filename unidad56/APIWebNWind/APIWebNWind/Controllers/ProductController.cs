@@ -32,7 +32,8 @@ namespace APIWebNWind.Controllers
                 select new
                 {
                     Name = producto.ProductName,
-                    Price = producto.UnitPrice
+                    Price = producto.UnitPrice,
+                    Category=producto.Category.CategoryName
                 };
 
             return lista;
@@ -42,6 +43,17 @@ namespace APIWebNWind.Controllers
         [Route("GetNameAndPrice2")]
         public IEnumerable<Product> GetNameAndPrice2()
         {
+            Product p= new Product()
+            {
+                ProductName = "A",
+                UnitPrice = 1
+            };
+
+            Product p1 = new Product();
+            p1.ProductName = "A";
+            p1.UnitPrice = 1;
+            
+
 
             IEnumerable<Product> listaP =
                 from producto in contexto.Products
