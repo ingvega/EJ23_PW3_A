@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <div id="ValorInventario" style="width: 900px; height: 500px;"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(() => {
+            fetch("Product/GetInventarioCategoria",
+                {
+                    headers: { "Content-Type": "application/json" },
+                    credentials: 'include'
+                }
+            )
+                .then(response => {
+                    if (!response.ok) {
+                        throw response;
+                    }
+                    return response.json();
+                })
+                .then(info => {
+                    drawChart(info);
+                })
+                .catch(error => console.log(error));
+        });
+
+        function drawChart(info) {
+
+            var data1 = new google.visualization.DataTable();
+            data1.addColumn('string', 'Categoria');
+            data1.addColumn('number', 'Value');
+
+            var arrDatos = [];
+
+            arrDatos.push(['Categoria', 'Inventario']);
+            info.forEach(f => {
+                data1.addRow([f.categoria, f.inventario]);
+                arrDatos.push([f.categoria, f.inventario]);
+            });
+
+            
+
+            var data2 = google.visualization.arrayToDataTable(arrDatos);
+
+            var options = {
+                title: 'Existencia'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('ValorInventario'));
+
+            chart.draw(data2, options);
+        }
+    </script>
+    <script>
+
+        //fetch(uri)
+        //    .then(response => response.json())
+        //    .then(data => _displayItems(data))
+        //    .catch(error => console.error('Unable to get items.', error));
+
+        
+            
+    </script>
+</body>
+</html>

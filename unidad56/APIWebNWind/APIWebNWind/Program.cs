@@ -10,7 +10,7 @@ builder.Services.AddDbContext<NorthwindContext>(options =>
 
 builder.Services.AddCors(opts =>
 {
-    opts.AddDefaultPolicy(politica => politica.WithOrigins("http://localhost:5231"));
+    opts.AddDefaultPolicy(politica => politica.WithOrigins("http://localhost:5231","http://localhost:8080"));
 });
 
 builder.Services.AddControllers();
@@ -26,6 +26,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
