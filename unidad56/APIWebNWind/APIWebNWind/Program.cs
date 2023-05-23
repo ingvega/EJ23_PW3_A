@@ -10,7 +10,7 @@ builder.Services.AddDbContext<NorthwindContext>(options =>
 
 builder.Services.AddCors(opts =>
 {
-    opts.AddDefaultPolicy(politica => politica.WithOrigins("http://localhost:5231","http://localhost:8080"));
+    opts.AddDefaultPolicy(politica => politica.WithOrigins("http://localhost:5231","http://localhost:8080", "http://127.0.0.1:5500"));
 });
 
 builder.Services.AddControllers();

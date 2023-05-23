@@ -141,7 +141,7 @@ namespace APIWebNWind.Controllers
                     new
                     {
                         Categoria = c.CategoryName,
-                        Existencia = p.UnitPrice
+                        Existencia = p.UnitsInStock
                     }
                 ).GroupBy(pc=>pc.Categoria)
                 .Select(grupo=>

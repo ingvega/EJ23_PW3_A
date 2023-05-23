@@ -24,7 +24,7 @@
             .then(response => response.json())
             .then(info => {
                 var idTabla = '#tblProductos';
-                var tabla = $(idTabla).DataTable({
+                $(idTabla).DataTable({
                     data: info,
                     columns:
                         [
@@ -44,28 +44,28 @@
                     },
                     "fnInitComplete": function (oSettings, json) {
                         /Configuración de los filtros individuales/
-                        //var fila = $(this).children("thead").children("tr").clone();
-                        //var pie = $("<tfoot/>").append(fila).css("display", "table-header-group");
-                        //$(this).children("thead").after(pie);
-                        //$(fila).children().each(function () {
-                        //    $(this).prop("class", null);
-                        //});
+                        var fila = $(this).children("thead").children("tr").clone();
+                        var pie = $("<tfoot/>").append(fila).css("display", "table-header-group");
+                        $(this).children("thead").after(pie);
+                        $(fila).children().each(function () {
+                            $(this).prop("class", null);
+                        });
 
-                        //$(fila).children("th").each(function () {
-                        //    var title = $(this).text().toLowerCase();
-                        //    $(this).html('<input type="text" class="filtro form-control input-sm" style="width:90%;" placeholder="Buscar ' + title + '" />');
-                        //});
-                        //debugger;
-                        ////Activa el filtrado
-                        //tabla.api().columns().eq(0).each(function (colIdx) {
-                        //    $(idTabla + ' tfoot th:eq(' + colIdx + ') input').on('keyup change', function () {
-                        //        tabla.api().column(colIdx).search(this.value).draw();
-                        //    });
+                        $(fila).children("th").each(function () {
+                            var title = $(this).text().toLowerCase();
+                            $(this).html('<input type="text" class="filtro form-control input-sm" style="width:90%;" placeholder="Buscar ' + title + '" />');
+                        });
+                        tabla = this;
+                        //Activa el filtrado
+                        tabla.api().columns().eq(0).each(function (colIdx) {
+                            $(idTabla + ' tfoot th:eq(' + colIdx + ') input').on('keyup change', function () {
+                                tabla.api().column(colIdx).search(this.value).draw();
+                            });
 
-                        //    $('input', tabla.api().column(colIdx).footer()).on('click', function (e) {
-                        //        e.stopPropagation();
-                        //    });
-                        //});
+                            $('input', tabla.api().column(colIdx).footer()).on('click', function (e) {
+                                e.stopPropagation();
+                            });
+                        });
                     },
                     dom: 'Bfrtip',
                     colReorder: true,
@@ -83,7 +83,9 @@
                                 .reduce(function (a, b) {
                                     return a + b;
                                 }, 0);
-                            return group + ' (' + sum + ')';
+                            //return group + ' (' + sum + ')';
+                            //return `<div style=" display:flex;justify-content: space-between;"><strong>${group}
+                            //</strong><strong>${sum}</strong></div>`;
                         },
                         dataSrc: 'categoria'
                     },

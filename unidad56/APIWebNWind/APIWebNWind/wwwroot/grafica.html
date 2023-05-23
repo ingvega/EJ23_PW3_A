@@ -25,16 +25,16 @@
                     return response.json();
                 })
                 .then(info => {
-                    drawChart(info);
+                    cargarGrafica(info);
                 })
                 .catch(error => console.log(error));
         });
 
-        function drawChart(info) {
+        function cargarGrafica(info) {
 
             var data1 = new google.visualization.DataTable();
             data1.addColumn('string', 'Categoria');
-            data1.addColumn('number', 'Value');
+            data1.addColumn('number', 'Inventario');
 
             var arrDatos = [];
 
@@ -49,7 +49,7 @@
             var data2 = google.visualization.arrayToDataTable(arrDatos);
 
             var options = {
-                title: 'Existencia'
+                title: 'Existencia por categoría'
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('ValorInventario'));
